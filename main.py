@@ -15,10 +15,14 @@ async def on_ready():
 
     channel = bot.get_channel() #masukan server id
     if channel is not None:
-        await channel.send("Halo saya adalah Environmental_bot, saya akan memberikan bantuan cara mengurangi sampah di rumah anda. \n berikut command yang anda bisa pakai: \n $tips")
+        await channel.send("Halo saya adalah Environmental_bot, saya akan memberikan bantuan cara mengurangi sampah di rumah anda. \n berikut command yang anda bisa pakai: \n $commands \n $tips")
     else:
         print("Channel not found!")
 
+@bot.command()
+async def commands(ctx):
+    await ctx.send(f'List perintah: \n $commands \n tips')
+    
 @bot.command()
 async def tips(ctx):
     choice=random.randint(1,3)
@@ -36,3 +40,4 @@ async def tips(ctx):
 
 
 bot.run("")
+
