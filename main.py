@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 async def on_ready():
     print(f"You have logged in as {bot.user}")
 
-    channel = bot.get_channel(1436338250678669415)
+    channel = bot.get_channel() #masukan server id
     if channel is not None:
         await channel.send("Halo saya adalah Environmental_bot, saya akan memberikan bantuan cara mengurangi sampah di rumah anda. \n berikut command yang anda bisa pakai: \n $tips")
     else:
@@ -33,5 +33,6 @@ async def tips(ctx):
         await ctx.send(f'Manfaatkan Wadah: Gunakan kembali botol plastik atau wadah bekas untuk menanam tanaman atau kebutuhan lain.')
     else:
         await ctx.send("error")
+
 
 bot.run("")
